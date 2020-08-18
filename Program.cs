@@ -25,6 +25,7 @@ namespace GraingerInvoicesSniffer
                 XmlDocument doc = new XmlDocument();
                 doc.Load(Path.Combine(baseFolderPath, invoice));
                 XmlNode root = doc.DocumentElement;
+                //https://xmltoolbox.appspot.com/xpath_generator.html 
                 XmlNodeList nodes = root.SelectNodes("/cXML/Request/InvoiceDetailRequest/InvoiceDetailSummary/NetAmount");
                 var totalnode = nodes[0].InnerText;
                 Console.WriteLine(invoice+ "     " + totalnode);
